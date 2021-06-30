@@ -2,10 +2,6 @@ window.addEventListener("load", function (event) {
     document.querySelector("body").classList.remove("preload");
 });
 
-function noScroll() {
-    window.scrollTo(0, 0);
-}
-
 const hamburger = document.getElementById('icon-hamburger');
 const icon_close = document.getElementById('icon-close');
 const menu = document.getElementById('nav-menu');
@@ -19,7 +15,7 @@ hamburger.addEventListener('click', () => {
     hero.style.backgroundImage = 'none'
     hero.style.backgroundColor = 'black';
     hero_title.style.display = 'none';
-    window.addEventListener('scroll', noScroll);
+    document.body.classList.add('fixed');
 })
 
 icon_close.addEventListener('click', () => {
@@ -28,5 +24,5 @@ icon_close.addEventListener('click', () => {
     menu.style.display = 'none';
     hero.style.backgroundImage = "url('images/mobile/image-hero.jpg')";
     hero_title.style.display = 'block';
-    window.removeEventListener('scroll', noScroll);
+    document.body.classList.remove('fixed');
 })
